@@ -3,6 +3,7 @@ package model;
 import java.util.Scanner;
 
 public class Game {
+
     public static final int TZUYU = 0;
     public static final int NANCY = 1;
     public static final int CHOA = 2;
@@ -20,21 +21,8 @@ public class Game {
         int team;
         int firstActivity;
 
-        System.out.println("Do you have a code to enter? (Type code then Enter) (Press Enter if no code)");
-        passcode = reader.nextLine();
-        if (checkPasscode()) {
-            System.out.println("Correct code.");
-        } else {
-            System.out.println("Incorrect code.");
-        }
-        printLineBreak();
-
-        System.out.print("What is your name? ");
-        name = reader.nextLine();
-        printLineBreak();
-
+        queryUserCodeAndName();
         printIntro();
-        printLineBreak();
 
         System.out.println("James, the MC of the event, calls everyone together to explain how the scavenger " +
                 "hunt is going to go down. The girls will partner up and work together to find the 6 different " +
@@ -279,6 +267,21 @@ public class Game {
         reader.nextLine();
     }
 
+    private void queryUserCodeAndName() {
+        System.out.println("Do you have a code to enter? (Type code then Enter) (Press Enter if no code)");
+        passcode = reader.nextLine();
+        if (checkPasscode()) {
+            System.out.println("Correct code.");
+        } else {
+            System.out.println("Incorrect code.");
+        }
+        printLineBreak();
+
+        System.out.print("What is your name? ");
+        name = reader.nextLine();
+        printLineBreak();
+    }
+
     //Prints the game intro
     private void printIntro() {
         System.out.println("You don't know how you were fortunate enough to be in this situation," +
@@ -311,6 +314,7 @@ public class Game {
         //System.out.println("");
         System.out.println("Choa and Taylor quietly lounge by the beanbags playing Pokemon. Their silence is" +
                 " occasionally interrupted with exasperated cries of victory and defeat.");
+        printLineBreak();
     }
 
     //Prompts user for a (valid) choice and returns that choice
