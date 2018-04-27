@@ -22,29 +22,41 @@ public class Girl {
         girlNum = girlCode;
         netflixAndChill = false;
         if ((girlCode == Game.TZUYU) || (girlCode == Game.NANCY)) {
-            bakeCookies = false;
-            decorateTheHouse = false;
-            if (girlCode == Game.TZUYU) {
-                name = "Tzuyu";
-            } else {
-                name = "Nancy";
-            }
+            setFieldsTzuyuOrNancy(girlCode);
         } else if ((girlCode == Game.CHOA) || (girlCode == Game.TAYLOR)) {
-            videoGames = false;
-            getFood = false;
-            if (girlCode == Game.CHOA) {
-                name = "Choa";
-            } else {
-                name = "Taylor";
-            }
+            setFieldsChoaOrTaylor(girlCode);
         } else {
-            dinnerAndDrinking = false;
-            pillowFights = false;
-            if (girlCode == Game.MARY) {
-                name = "Mary";
-            } else {
-                name = "Seolhyun";
-            }
+            setFieldsMaryOrSeolhyun(girlCode);
+        }
+    }
+
+    private void setFieldsMaryOrSeolhyun(int girlCode) {
+        dinnerAndDrinking = false;
+        pillowFights = false;
+        if (girlCode == Game.MARY) {
+            name = "Mary";
+        } else {
+            name = "Seolhyun";
+        }
+    }
+
+    private void setFieldsChoaOrTaylor(int girlCode) {
+        videoGames = false;
+        getFood = false;
+        if (girlCode == Game.CHOA) {
+            name = "Choa";
+        } else {
+            name = "Taylor";
+        }
+    }
+
+    private void setFieldsTzuyuOrNancy(int girlCode) {
+        bakeCookies = false;
+        decorateTheHouse = false;
+        if (girlCode == Game.TZUYU) {
+            name = "Tzuyu";
+        } else {
+            name = "Nancy";
         }
     }
 
